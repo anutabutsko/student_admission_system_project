@@ -133,6 +133,27 @@ def make_offers(payload, admitted_students, dropouts):
 
     return offers
 
+# Make a random fake data set of size n
+def random_student_admission(size = 40):
+    # Initialize faker
+    from faker import Faker
+    import numpy as np
+    fake = Faker()
+
+    # Create list of student_data dicts
+    student_list = []
+    for individual in range(0,size):
+        name = fake.name()
+        student_type = np.random.choice(['Undergraduate', 'Graduate', 'Auditor'])
+        computer_science = np.random.choice([True, False])
+        math = np.random.choice([True, False])
+        year = np.random.randint(0,5)
+        orientation = np.random.randint(0,6)
+        student_list.append(student_data(name, student_type, computer_science, math, year, orientation))
+    
+    return student_list
+
+
 
 # MAIN SCRIPT
 
@@ -167,6 +188,12 @@ data = [student_data("Spider-man", "Graduate", False, True, 2, 2),
         student_data("Nick Fury", "Undergraduate", False, True, 3, 2),
         student_data("Nightcrawler", "Graduate", False, False, 1, 1),
         student_data("Wonder Woman", "Auditor", False, True, 0, 1)]
+
+
+
+
+
+
 
 admitted_students = process_admissions(data)
 
