@@ -1,3 +1,8 @@
+# Import Libraries
+import pandas as pd
+import numpy as np
+
+
 # Max heap implementation
 def max_heap(lst, value):
     lst.append(value)  # Add the new value to the end of the heap
@@ -207,5 +212,8 @@ dropouts = [admitted_students[3], admitted_students[17]]
 # Making offers if places become available
 offers = make_offers(data, admitted_students, dropouts)
 print("Offers in order:")
-for index, offer in enumerate(offers):
-    print(index + 1, offer["name"])
+print(offers)
+# for index, offer in enumerate(offers):
+#     print(index, offer)
+offer_df = pd.DataFrame(offers)
+print(offer_df)
