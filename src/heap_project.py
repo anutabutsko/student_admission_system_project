@@ -1,6 +1,7 @@
 # Import Libraries
-import pandas as pd
 import numpy as np
+import pandas as pd
+from faker import Faker
 
 
 # Max heap implementation
@@ -94,7 +95,7 @@ def priority(payload, idx):
 
 # Processing each student and admitting by priority criteria
 def process_admissions(payload):
-    lst = []  #
+    lst = []
     admitted_students = []  # Initialize a list for admitted students
 
     # Enumerating through student requests and prioritizing them
@@ -138,29 +139,27 @@ def make_offers(payload, admitted_students, dropouts):
 
     return offers
 
+
 # Make a random fake data set of size n
-def random_student_admission(size = 40):
-    # Initialize faker
-    from faker import Faker
-    import numpy as np
+def random_student_admission(size=40):
+    # Initialize Faker
     fake = Faker()
 
     # Create list of student_data dicts
     student_list = []
-    for individual in range(0,size):
+    for individual in range(0, size):
         name = fake.name()
         student_type = np.random.choice(['Undergraduate', 'Graduate', 'Auditor'])
         computer_science = np.random.choice([True, False])
         math = np.random.choice([True, False])
-        year = np.random.randint(0,5)
-        orientation = np.random.randint(0,6)
+        year = np.random.randint(0, 5)
+        orientation = np.random.randint(0, 6)
         student_list.append(student_data(name, student_type, computer_science, math, year, orientation))
-    
+
     return student_list
 
 
-
-# MAIN SCRIPT
+# main script
 
 # Creating sample payload
 data = [student_data("Spider-man", "Graduate", False, True, 2, 2),
@@ -194,12 +193,6 @@ data = [student_data("Spider-man", "Graduate", False, True, 2, 2),
         student_data("Nightcrawler", "Graduate", False, False, 1, 1),
         student_data("Wonder Woman", "Auditor", False, True, 0, 1)]
 
-
-
-
-
-
-
 admitted_students = process_admissions(data)
 
 # print("Admitted students in order:")
@@ -211,9 +204,7 @@ dropouts = [admitted_students[3], admitted_students[17]]
 
 # Making offers if places become available
 offers = make_offers(data, admitted_students, dropouts)
-print("Offers in order:")
-print(offers)
-# for index, offer in enumerate(offers):
-#     print(index, offer)
+
 offer_df = pd.DataFrame(offers)
-print(offer_df)
+
+print(f"Offers in order:\n {offer_df}")

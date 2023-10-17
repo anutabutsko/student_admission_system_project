@@ -16,6 +16,14 @@ This system implements a student admission process based on prioritized criteria
 
 - **Offer Generator**: The `make_offers()` function simulates the offer-making process, considering any dropouts, and fills in available spots with the next prioritized students.
 
+## Dependencies
+
+Before running the script, ensure that the required dependencies are installed using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Sample Usage
 
 The main script offers a demonstration with a mock dataset of students with superhero names. Based on the dataset, the top 25 students are admitted. Additionally, the system simulates the case where some students drop out and new offers are made to fill those spots.
@@ -23,9 +31,7 @@ The main script offers a demonstration with a mock dataset of students with supe
 To execute, simply run:
 
 ```python
-print("Offers in order:")
-for index, offer in enumerate(offers):
-    print(index + 1, offer["name"])
+print(f"Offers in order:\n {offer_df}")
 ```
 
 ## Prioritization Logic
