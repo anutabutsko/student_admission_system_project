@@ -244,7 +244,12 @@ def process_offers(data, admitted_students, dropouts, addresses_df):
         print(index + 1, offer[1]["Name"], offer[1]["Street Address"], offer[1]["City"], offer[1]["State"], offer[1]["ZIP Code"])
         
 process_offers(data, admitted_students, dropouts, addresses_df)
-offers_df.to_csv('offers_data.csv', index=False)
+offers_df.to_csv('offers_data.csv')
+try:
+    offers_df.to_csv('offers_data.csv')
+    print("CSV file saved successfully.")
+except Exception as e:
+    print("Error:", str(e))
 
 
 # %%
