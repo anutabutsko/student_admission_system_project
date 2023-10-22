@@ -280,8 +280,8 @@ plt.show()
 
 # Student Characteristics Graph
 plt.figure(figsize=(10, 6))
-characteristics = list(student_characteristics.keys())
-student_counts = list(student_characteristics.values())
+characteristics = list(students_df.columns[2:])
+student_counts = [students_df[characteristic].sum() for characteristic in characteristics]
 plt.pie(student_counts, labels=characteristics, autopct='%1.1f%%', startangle=140)
 plt.title('Student Characteristics')
 plt.axis('equal')  
