@@ -240,10 +240,13 @@ def process_offers(data, admitted_students, dropouts, addresses_df):
     offers_df = pd.DataFrame(offers)  # Create the DataFrame locally
     # Merge the offers DataFrame with the addresses DataFrame using an inner join
     offers_df = pd.merge(offers_df, addresses_df, on="Name", how="inner")
-    for index, offer in enumerate(offers_df.iterrows()):
-        print(index + 1, offer[1]["Name"], offer[1]["Street Address"], offer[1]["City"], offer[1]["State"], offer[1]["ZIP Code"])
-        
-process_offers(data, admitted_students, dropouts, addresses_df)
+    return offers_df
+    # for index, offer in enumerate(offers_df.iterrows()):
+    #     print(index + 1, offer[1]["Name"], offer[1]["Street Address"], offer[1]["City"], offer[1]["State"], offer[1]["ZIP Code"])
+
+
+offers_df = process_offers(data, admitted_students, dropouts, addresses_df)
+
 offers_df.to_csv('offers_data.csv')
 try:
     offers_df.to_csv('offers_data.csv')
