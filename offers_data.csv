@@ -1,22 +1,51 @@
-,Name,student_type,computer_science,math,year,orientation_day,Street Address,City,State,ZIP Code
-0,Billy Pilgrim,Graduate,False,True,2,2,1234 Elm Street,Springfield,Illinois,62701
-1,The Tralfamadorian,Undergraduate,True,True,4,1,5678 Oak Avenue,Tralfamadore,Outer Space,12345
-2,Tyler Durden,Graduate,False,False,3,3,4321 Maple Lane,Fight Club City,Anarchy,54321
-3,William S. Burroughs,Graduate,False,False,2,1,2468 Pine Street,New York,New York,10001
-4,Yossarian,Undergraduate,False,True,4,5,1357 Cedar Avenue,Pianosa,Italy,12345
-5,Patrick Bateman,Graduate,True,True,1,1,8642 Redwood Drive,New York,New York,10002
-6,The Hitchhiker,Auditor,True,False,0,5,9875 Willow Lane,Earth,Milky Way,54321
-7,Ford Prefect,Graduate,False,False,4,2,3690 Alder Street,Betelgeuse,Galaxy,12345
-8,Anton Chigurh,Undergraduate,True,True,4,3,7523 Birch Avenue,No Country,Nowhere,54321
-9,Holden Caulfield,Graduate,False,False,1,3,5210 Cedar Road,New York,New York,10003
-10,Marla Singer,Auditor,True,True,2,4,2150 Maple Lane,Wilmington,Delaware,19801
-11,Randle McMurphy,Graduate,True,True,3,2,3033 Elm Street,Salem,Oregon,97301
-12,Zaphod Beeblebrox,Undergraduate,False,True,2,1,6234 Oak Avenue,Betelgeuse,Galaxy,12345
-13,John Dillinger,Graduate,False,False,3,1,7749 Redwood Drive,Chicago,Illinois,60601
-14,Sheriff Ed Tom Bell,Auditor,True,False,2,4,1947 Pine Street,Laredo,Texas,78040
-15,Joseph Heller,Graduate,False,True,4,5,1502 Cedar Avenue,New York,New York,10004
-16,Travis Bickle,Undergraduate,False,True,1,5,6351 Willow Lane,New York,New York,10005
-17,Lenny Bruce,Auditor,True,False,2,5,8842 Birch Road,Los Angeles,California,90001
-18,Marianne Engel,Undergraduate,True,True,2,3,12345 Oak Avenue,Toronto,Ontario,M5V 2L7
-19,Llewelyn Moss,Graduate,True,False,3,5,7890 Pine Street,Austin,Texas,78701
-20,Marvin the Paranoid Android,Undergraduate,False,True,3,2,5678 Cedar Road,London,England,SW1A 2AA
+,name,student_type,computer_science,math,year,orientation_day,email,address
+0,Kristin Mendez,Auditor,False,True,2,0,jamesjohnson@gmail.com,"80231 Golden Hollow Suite 174
+South Dennismouth, SC 79693"
+1,Olivia Mckenzie,Graduate,False,False,0,3,martinandrew@yahoo.com,"0790 Mcgrath Point Suite 134
+Richardfort, WY 61183"
+2,Denise Turner,Auditor,False,True,3,3,martinezjennifer@gmail.com,"4677 Meyer Avenue Apt. 749
+Travisburgh, MD 13079"
+3,Samuel Garcia,Graduate,True,True,2,2,pricekatelyn@gmail.com,"7751 Morris Forest
+Lake Erin, RI 42930"
+4,Pam Brown,Auditor,True,False,4,1,matthewcarey@hotmail.com,"370 Jones Avenue
+Jamesbury, NY 83644"
+5,Anthony Hudson,Undergraduate,True,True,3,0,reynoldsjessica@hotmail.com,"97334 Tara Vista Suite 155
+North Katieborough, WV 89160"
+6,William Wells,Auditor,False,False,4,3,julie52@yahoo.com,"4578 Sarah Isle
+North Chelsea, AK 03233"
+7,Jason Douglas,Auditor,False,True,2,5,ewingpaul@gmail.com,"158 Kayla Plaza
+Rodriguezmouth, MN 25947"
+8,Emily Nicholson,Auditor,True,True,2,0,nnelson@yahoo.com,"8416 Ryan Alley Suite 587
+Mooreside, OK 79921"
+9,Lauren Patel,Graduate,False,True,2,3,michelle12@yahoo.com,"6846 Sharon Streets
+South Stephanieport, ND 68645"
+10,Nathan Hill,Graduate,True,False,4,2,heidi13@gmail.com,"077 Gonzalez Run Apt. 193
+Georgeside, ME 96149"
+11,Scott Harris,Auditor,False,False,4,2,blane@hotmail.com,"719 Marco Forge Apt. 705
+Susanstad, NH 20696"
+12,Eric Franklin,Graduate,True,True,3,0,marvinacevedo@gmail.com,"6756 Barbara Junction
+Ritaport, SD 28020"
+13,Kevin Diaz,Graduate,True,True,1,1,pfranco@gmail.com,"22369 Emily Shore
+Grahamtown, TX 75367"
+14,Tammy Ayers,Auditor,False,False,0,3,patriciarodriguez@yahoo.com,"73538 Martinez Wells
+East Harry, NV 71287"
+15,Darlene Lewis,Auditor,True,False,4,2,jenniferwilkins@gmail.com,"305 Martinez Island
+Jamesmouth, HI 96816"
+16,Megan Thompson,Undergraduate,False,False,4,5,mckinneydenise@hotmail.com,"458 Jeffrey Fords
+West John, ND 85409"
+17,William Nichols,Undergraduate,False,False,2,5,brockalicia@gmail.com,"928 Williams Drives
+East Michelle, WA 08993"
+18,Michael Smith,Graduate,False,False,3,1,annamcknight@hotmail.com,"6696 Laura Crossroad Apt. 675
+Tombury, LA 98911"
+19,Lisa Morrison,Undergraduate,False,False,3,1,brandireid@gmail.com,"381 Wood Cliff Apt. 872
+Ericburgh, SC 53058"
+20,Scott Silva,Undergraduate,True,True,1,5,debradavis@yahoo.com,"USNV Jones
+FPO AE 56518"
+21,Timothy Smith,Graduate,True,True,0,0,adamsmith@gmail.com,"5182 Walton Well
+Caseview, PA 87277"
+22,Elizabeth King,Undergraduate,False,True,2,2,nmorris@yahoo.com,"2037 Sanchez Station
+South Tylerhaven, CA 35060"
+23,William Hammond,Auditor,True,False,0,3,mbrown@gmail.com,"01540 Jeffrey Isle
+Port Rubenmouth, NH 94179"
+24,Brad House,Undergraduate,True,False,0,5,amber24@gmail.com,"97034 Phelps Junctions Suite 831
+Lake Johnburgh, NH 77293"

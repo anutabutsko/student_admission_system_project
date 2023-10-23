@@ -222,3 +222,5 @@ dropouts = [admitted_students[3], admitted_students[17]]
 offers = make_offers(rand_stud, admitted_students, dropouts)
 offer_df = pd.DataFrame(offers)
 print(f"Offers in order:\n {offer_df}")
+
+offer_df.to_csv('offers_data.csv')
