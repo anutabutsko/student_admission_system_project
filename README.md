@@ -1,46 +1,72 @@
 # Max Heap-based Student Admission System
 
-## Overview
+This repository contains a Python script for a simple student admissions system. The system processes student applications, prioritizes them based on certain criteria, and makes admission offers to the most qualified candidates. Additionally, it simulates a random dataset of student applications for testing purposes.
 
-This system implements a student admission process based on prioritized criteria using Max Heap. Students are processed based on factors like student type, academic achievements, registration date, etc., and offers are made to the top 25 applicants. The system also accommodates dropout scenarios and makes additional offers to fill vacancies.
+## Table of Contents
+- [Dependencies](#dependencies)
+- [Max Heap Implementation](#max-heap-implementation)
+- [Student Data Structure](#student-data-structure)
+- [Admission Priority](#admission-priority)
+- [Processing Admissions](#processing-admissions)
+- [Making Admission Offers](#making-admission-offers)
+- [Random Student Dataset](#random-student-dataset)
+- [Usage](#usage)
 
-## Features
+## Dependencies <a name="dependencies"></a>
 
-- **Max Heap Implementation**: Functions `max_heap()` and `pop_max_heap()` offer insertion and extraction for max heap data structure respectively.
-
-- **Student Data Organizer**: The `student_data()` function generates a structured dictionary for each student with their profile data.
-
-- **Prioritization System**: The `priority()` function calculates priority for each student based on defined criteria.
-
-- **Admission Processor**: `process_admissions()` reviews the student data and prioritizes each student for admissions.
-
-- **Offer Generator**: The `make_offers()` function simulates the offer-making process, considering any dropouts, and fills in available spots with the next prioritized students.
-
-## Dependencies
-
-Before running the script, ensure that the required dependencies are installed using the following command:
-
+Before running the script, ensure you have requirements.txt installed:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Sample Usage
+## Max Heap Implementation <a name="max-heap-implementation"></a>
 
-The main script offers a demonstration with a mock dataset of students with superhero names. Based on the dataset, the top 25 students are admitted. Additionally, the system simulates the case where some students drop out and new offers are made to fill those spots.
+The script includes a max heap implementation for efficiently prioritizing student admission requests. It is used to maintain a heap of students with the highest priority at the top.
 
-To execute, simply run:
+## Student Data Structure <a name="student-data-structure"></a>
 
-```python
-print(f"Offers in order:\n {offer_df}")
+Student data is represented as a dictionary containing the following fields:
+- `name`: Student's name
+- `student_type`: Student type (e.g., Undergraduate, Graduate, Auditor)
+- `computer_science`: Boolean indicating if the student has a computer science background
+- `math`: Boolean indicating if the student has a math background
+- `year`: Student's current academic year
+- `orientation_day`: The day the student registered for orientation
+- `email`: Student's email address
+- `address`: Student's address (generated using Faker)
+
+## Admission Priority <a name="admission-priority"></a>
+
+The `priority` function calculates a priority score for each student based on the following criteria:
+- Graduate students have a higher priority.
+- Computer Science students are preferred.
+- Math students are given preference.
+- Students closer to graduation are prioritized.
+- Earlier registration dates (orientation days) get higher preference.
+- In the event of a tie, the original index is used as a unique identifier.
+
+## Processing Admissions <a name="processing-admissions"></a>
+
+The `process_admissions` function processes student admission requests, prioritizes them, and admits up to 25 students based on their priority scores. Admitted students are stored in a list.
+
+## Making Admission Offers <a name="making-admission-offers"></a>
+
+The `make_offers` function makes admission offers to admitted students. It checks for students who have not dropped the class and offers admission to them. If there are empty spots, it fills them with the most qualified students from the remaining applicants.
+
+## Random Student Dataset <a name="random-student-dataset"></a>
+
+The script includes a `random_student_admission` function that generates a random dataset of student applications for testing purposes. It uses the Faker library to create realistic student data.
+
+## Usage <a name="usage"></a>
+
+1. Ensure you have installed the required dependencies as mentioned in the [Dependencies](#dependencies) section.
+
+2. You can modify the script to change the number of randomly generated student applications by modifying the `random_student_admission` function's `size` parameter.
+
+3. Run the script to simulate the admission process, prioritize students, and generate admission offers. The results are saved to a CSV file named `offers_data.csv`.
+
+```bash
+python heap_project.py
 ```
 
-## Prioritization Logic
-
-The prioritization logic is applied as follows:
-
-1. Graduate students have a higher priority.
-2. Computer Science students are preferred.
-3. Math students are given preference.
-4. Students closer to graduation are prioritized.
-5. Earlier registration dates (orientation days) get higher preference.
-6. In the event of a tie, the original index is used as a unique identifier.
+4. You can inspect the generated admission offers in the `offers_data.csv` file.
