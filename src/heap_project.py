@@ -216,7 +216,7 @@ def random_student_admission(size=40):
 
 
 
-rand_stud = random_student_admission(138)
+rand_stud = random_student_admission(27)
 admitted_students = process_admissions(rand_stud)
 dropouts = [admitted_students[3], admitted_students[17]]
 offers = make_offers(rand_stud, admitted_students, dropouts)
