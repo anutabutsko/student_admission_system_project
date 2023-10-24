@@ -1,7 +1,9 @@
 ---
 title: "Algorithims Heap Project"
 author: "Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox"
-format: revealjs
+format:
+  revealjs:
+    embed-resources: true
 jupyter: python3
 ---
 ```{python}
@@ -181,7 +183,7 @@ def make_offers(payload, admitted_students, dropouts):
 
 ## Make a random fake data set of size n
 
-Using the faker package we built a function to create random students to populate our school to test our functions in createing priority ques. 
+Using the faker package we built a function to create random students to populate our school to test our functions in createing priority queues. 
 
 ```{python}
 #| echo: true
@@ -210,7 +212,7 @@ def random_student_admission(size=40):
 
 ## Create Admited Sutdents List 
 
-We first create a list of admited students. We select the size of our class and generate a random class of that size. In this case we do 38
+We first create a list of admited students. We select the size of our class and generate a random class of that size. In this case we do 38/
 
 ```{python}
 rand_class = random_student_admission(38)
