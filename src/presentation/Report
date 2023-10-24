@@ -54,10 +54,13 @@ Testing Methodology
 Each function in the algorithm was individually tested with various inputs to verify correctness.
 This included testing the max heap operations, priority calculations, and admission processes.
 Then, the entire admission process, from processing applications to making admission offers and
-generating DataFrames, was tested using randomly generated data. This ensured that the complete
-system worked as expected. In addition, the algorithm was tested with edge cases, such as when the
-number of applicants is less than 25 or when there are ties in priority scores. These tests helped
-identify and handle exceptional scenarios.
+generating DataFrames, was tested using randomly generated data. The data was generated
+using the random_student_admission function, which creates a diverse dataset of student applications
+with randomly generated details, including name, student type, academic background, and contact
+information. Utilizing this random data generator for testing ensured that the complete system functioned
+as expected, irrespective of the type of data provided. In addition, the algorithm was tested with edge
+cases, such as when the number of applicants is less than 25 or when there are ties in priority scores.
+These tests helped identify and handle exceptional scenarios.
 The testing process validated the correctness and efficiency of the admission algorithm. It
 successfully prioritized students based on the specified criteria, made admission offers to the most
 qualified candidates, and generated Pandas DataFrames for further analysis. The algorithm
