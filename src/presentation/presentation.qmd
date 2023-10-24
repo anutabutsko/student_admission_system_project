@@ -1,6 +1,6 @@
 ---
 title: "Algorithims Heap Project"
-author: "Matthew Wilcox"
+authors: "Matthew Wilcox, Emma Horton, Hanna Butsko, Arianne Pozzi"
 format: revealjs
 jupyter: python3
 ---
