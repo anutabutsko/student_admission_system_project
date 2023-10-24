@@ -12,9 +12,11 @@ design choices, testing methodology, and potential future extensions.
 Algorithm Description
 
 The algorithm chosen for this project is the Max Heap Priority Queue algorithm. This algorithm was
-selected due to its favorable time complexity for searching (O(n log n)), as well as its ability to
+selected due to its favorable time complexity for sorting (O(n log n)), as well as its ability to
 keep the highest-priority element readily available at the top of the queue. In our case, the next
 priority student is always at the front of the queue.
+Extraction of the element only takes O(lg n) time.
+
 
 Our algorithm starts with the students being input as a list of dictionaries, with each student
 represented by a complete dictionary. From there, a priority ranking is assigned to each student
