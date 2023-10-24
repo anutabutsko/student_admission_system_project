@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="presentation_files/libs/quarto-html/tabby.min.js"></script>
-<script src="presentation_files/libs/quarto-html/popper.min.js"></script>
-<script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.313">
+<html lang="en">
+<head>
+    <script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
+    <script src="presentation_files/libs/quarto-html/tabby.min.js"></script>
+    <script src="presentation_files/libs/quarto-html/popper.min.js"></script>
+    <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+    <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+    <link href="presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+    <link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet"
+          id="quarto-text-highlighting-styles">
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.2.313">
 
-  <meta name="author" content="Matthew Wilcox">
-  <title>Algorithims Heap Project</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
-  <style>
+    <meta name="author" content="Matthew Wilcox">
+    <title>Algorithims Heap Project</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
+    <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -92,13 +96,14 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+    <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+    <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+    <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+    <link href="presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+    <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -294,8 +299,9 @@
     background-color: #ffe5d0
   }
 
-  </style>
-  <style type="text/css">
+
+    </style>
+    <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -381,55 +387,72 @@
       margin-left: auto;
       margin-right: 0; 
     }
-  </style>
+
+    </style>
 </head>
 <body class="quarto-light">
-  <div class="reveal">
+<div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Algorithims Heap Project</h1>
+        <section id="title-slide" class="quarto-title-block center">
+            <h1 class="title">Algorithims Heap Project</h1>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Matthew Wilcox 
-</div>
-</div>
-</div>
+            <div class="quarto-title-authors">
+                <div class="quarto-title-author">
+                    <div class="quarto-title-author-name">
+                        Matthew Wilcox
+                    </div>
+                </div>
+            </div>
 
-</section>
-<section id="background" class="slide level2">
-<h2>Background</h2>
-</section>
-<section id="max-heap-implemenation" class="slide level2">
-<h2>Max Heap Implemenation</h2>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> max_heap(lst, value):</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    lst.append(value)  <span class="co"># Add the new value to the end of the heap</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    idx <span class="op">=</span> <span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span>  <span class="co"># Get the index of the newly added element</span></span>
+        </section>
+        <section id="background" class="slide level2">
+            <h2>Background</h2>
+        </section>
+        <section id="max-heap-implemenation" class="slide level2">
+            <h2>Max Heap Implemenation</h2>
+            <div class="cell" data-execution_count="2">
+                <div class="sourceCode cell-code" id="cb1"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> max_heap(lst, value):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    lst.append(value)  <span
+        class="co"># Add the new value to the end of the heap</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    idx <span class="op">=</span> <span class="bu">len</span>(lst) <span
+        class="op">-</span> <span class="dv">1</span>  <span
+        class="co"># Get the index of the newly added element</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
 <span id="cb1-5"><a href="#cb1-5"></a>    <span class="co"># Moving the newly added element up the tree as long as it's greater</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co"># than its parent, maintaining the max heap property</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>    <span class="cf">while</span> idx <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-8"><a href="#cb1-8"></a>        parent_index <span class="op">=</span> (idx <span class="op">-</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span
+        class="co"># than its parent, maintaining the max heap property</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="cf">while</span> idx <span class="op">&gt;</span> <span
+        class="dv">0</span>:</span>
+<span id="cb1-8"><a href="#cb1-8"></a>        parent_index <span class="op">=</span> (idx <span
+        class="op">-</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">2</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a>        <span class="cf">if</span> lst[idx] <span class="op">&gt;</span> lst[parent_index]:</span>
 <span id="cb1-10"><a href="#cb1-10"></a>            lst[idx], lst[parent_index] <span class="op">=</span> lst[parent_index], lst[idx]</span>
 <span id="cb1-11"><a href="#cb1-11"></a>            idx <span class="op">=</span> parent_index</span>
 <span id="cb1-12"><a href="#cb1-12"></a>        <span class="cf">else</span>:</span>
-<span id="cb1-13"><a href="#cb1-13"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="pop-max-heap-implementation" class="slide level2">
-<h2>Pop max heap implementation</h2>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> pop_max_heap(lst):</span>
+<span id="cb1-13"><a href="#cb1-13"></a>            <span class="cf">break</span></span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="pop-max-heap-implementation" class="slide level2">
+            <h2>Pop max heap implementation</h2>
+            <div class="cell" data-execution_count="3">
+                <div class="sourceCode cell-code" id="cb2"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> pop_max_heap(lst):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="co"># Checking if list is empty</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">list</span>:</span>
-<span id="cb2-4"><a href="#cb2-4"></a>        <span class="cf">return</span> <span class="st">"The array is empty"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">if</span> <span class="kw">not</span> <span
+        class="bu">list</span>:</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        <span class="cf">return</span> <span
+        class="st">"The array is empty"</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="co"># Checking if there is only one element in the list</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="cf">if</span> <span class="bu">len</span>(lst) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span
+        class="co"># Checking if there is only one element in the list</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="cf">if</span> <span class="bu">len</span>(lst) <span class="op">==</span> <span
+        class="dv">1</span>:</span>
 <span id="cb2-8"><a href="#cb2-8"></a>        <span class="cf">return</span> lst.pop()</span>
 <span id="cb2-9"><a href="#cb2-9"></a></span>
 <span id="cb2-10"><a href="#cb2-10"></a>    <span class="co"># Maximum element</span></span>
@@ -438,23 +461,31 @@ Matthew Wilcox
 <span id="cb2-13"><a href="#cb2-13"></a>    last <span class="op">=</span> lst.pop()</span>
 <span id="cb2-14"><a href="#cb2-14"></a></span>
 <span id="cb2-15"><a href="#cb2-15"></a>    <span class="cf">if</span> lst:</span>
-<span id="cb2-16"><a href="#cb2-16"></a>        <span class="co"># Moving the last element to the root position</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>        <span
+        class="co"># Moving the last element to the root position</span></span>
 <span id="cb2-17"><a href="#cb2-17"></a>        lst[<span class="dv">0</span>] <span class="op">=</span> last</span>
 <span id="cb2-18"><a href="#cb2-18"></a>        index <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb2-19"><a href="#cb2-19"></a>        n <span class="op">=</span> <span class="bu">len</span>(lst)</span>
 <span id="cb2-20"><a href="#cb2-20"></a></span>
 <span id="cb2-21"><a href="#cb2-21"></a>        <span class="co"># Restore the tree by bringing down the element</span></span>
 <span id="cb2-22"><a href="#cb2-22"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb2-23"><a href="#cb2-23"></a>            left <span class="op">=</span> index <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a>            right <span class="op">=</span> index <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>            left <span class="op">=</span> index <span class="op">*</span> <span
+        class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a>            right <span class="op">=</span> index <span
+        class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span>
 <span id="cb2-25"><a href="#cb2-25"></a>            largest <span class="op">=</span> index</span>
 <span id="cb2-26"><a href="#cb2-26"></a></span>
-<span id="cb2-27"><a href="#cb2-27"></a>            <span class="co"># Comparing the largest value to the left child</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>            <span class="cf">if</span> left <span class="op">&lt;</span> n <span class="kw">and</span> lst[largest] <span class="op">&lt;</span> lst[left]:</span>
+<span id="cb2-27"><a href="#cb2-27"></a>            <span
+        class="co"># Comparing the largest value to the left child</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>            <span class="cf">if</span> left <span class="op">&lt;</span> n <span
+        class="kw">and</span> lst[largest] <span class="op">&lt;</span> lst[left]:</span>
 <span id="cb2-29"><a href="#cb2-29"></a>                largest <span class="op">=</span> left</span>
 <span id="cb2-30"><a href="#cb2-30"></a></span>
-<span id="cb2-31"><a href="#cb2-31"></a>            <span class="co"># Comparing the largest value to the right child</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a>            <span class="cf">if</span> right <span class="op">&lt;</span> n <span class="kw">and</span> lst[largest] <span class="op">&lt;</span> lst[right]:</span>
+<span id="cb2-31"><a href="#cb2-31"></a>            <span
+        class="co"># Comparing the largest value to the right child</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a>            <span class="cf">if</span> right <span
+        class="op">&lt;</span> n <span class="kw">and</span> lst[largest] <span
+        class="op">&lt;</span> lst[right]:</span>
 <span id="cb2-33"><a href="#cb2-33"></a>                largest <span class="op">=</span> right</span>
 <span id="cb2-34"><a href="#cb2-34"></a></span>
 <span id="cb2-35"><a href="#cb2-35"></a>            <span class="co"># Checking if largest index has been changed</span></span>
@@ -466,96 +497,143 @@ Matthew Wilcox
 <span id="cb2-41"><a href="#cb2-41"></a>            <span class="cf">else</span>:</span>
 <span id="cb2-42"><a href="#cb2-42"></a>                <span class="cf">break</span></span>
 <span id="cb2-43"><a href="#cb2-43"></a></span>
-<span id="cb2-44"><a href="#cb2-44"></a>    <span class="co"># Returning the maximum element that was removed</span></span>
-<span id="cb2-45"><a href="#cb2-45"></a>    <span class="cf">return</span> max_elem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="function-that-organizes-student-payload-into-a-dictionary" class="slide level2">
-<h2>Function that organizes student payload into a dictionary</h2>
-<p>We organized each student into a dictionary to use within the functions to retain all of the students data while assigning a priority</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> student_data(name, student_type, computer_science, math, year, orientation_day):</span>
+<span id="cb2-44"><a href="#cb2-44"></a>    <span
+        class="co"># Returning the maximum element that was removed</span></span>
+<span id="cb2-45"><a href="#cb2-45"></a>    <span class="cf">return</span> max_elem</span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="function-that-organizes-student-payload-into-a-dictionary" class="slide level2">
+            <h2>Function that organizes student payload into a dictionary</h2>
+            <p>We organized each student into a dictionary to use within the functions to retain all of the students
+                data while assigning a priority</p>
+            <div class="cell" data-execution_count="4">
+                <div class="sourceCode cell-code" id="cb3"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> student_data(name, student_type, computer_science, math, year, orientation_day):</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">return</span> {<span class="st">"name"</span>: name,</span>
 <span id="cb3-3"><a href="#cb3-3"></a>            <span class="st">"student_type"</span>: student_type,</span>
 <span id="cb3-4"><a href="#cb3-4"></a>            <span class="st">"computer_science"</span>: computer_science,</span>
 <span id="cb3-5"><a href="#cb3-5"></a>            <span class="st">"math"</span>: math,</span>
 <span id="cb3-6"><a href="#cb3-6"></a>            <span class="st">"year"</span>: year,</span>
-<span id="cb3-7"><a href="#cb3-7"></a>            <span class="st">"orientation_day"</span>: orientation_day}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="prioritizing-each-student" class="slide level2">
-<h2>Prioritizing each student</h2>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> priority(payload, idx):</span>
+<span id="cb3-7"><a href="#cb3-7"></a>            <span
+        class="st">"orientation_day"</span>: orientation_day}</span></code><button title="Copy to Clipboard"
+                                                                                   class="code-copy-button"><i
+                        class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="prioritizing-each-student" class="slide level2">
+            <h2>Prioritizing each student</h2>
+            <div class="cell" data-execution_count="5">
+                <div class="sourceCode cell-code" id="cb4"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> priority(payload, idx):</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    lst_priority <span class="op">=</span> [</span>
-<span id="cb4-3"><a href="#cb4-3"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span class="st">"student_type"</span>] <span class="op">==</span> <span class="st">"Graduate"</span> <span class="cf">else</span> <span class="dv">0</span>,</span>
-<span id="cb4-4"><a href="#cb4-4"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span class="st">"computer_science"</span>] <span class="kw">is</span> <span class="va">True</span> <span class="cf">else</span> <span class="dv">0</span>,</span>
-<span id="cb4-5"><a href="#cb4-5"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span class="st">"math"</span>] <span class="kw">is</span> <span class="va">True</span> <span class="cf">else</span> <span class="dv">0</span>,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span
+        class="st">"student_type"</span>] <span class="op">==</span> <span class="st">"Graduate"</span> <span
+        class="cf">else</span> <span class="dv">0</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span
+        class="st">"computer_science"</span>] <span class="kw">is</span> <span class="va">True</span> <span class="cf">else</span> <span
+        class="dv">0</span>,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        <span class="dv">1</span> <span class="cf">if</span> payload[<span
+        class="st">"math"</span>] <span class="kw">is</span> <span class="va">True</span> <span
+        class="cf">else</span> <span class="dv">0</span>,</span>
 <span id="cb4-6"><a href="#cb4-6"></a>        payload[<span class="st">"year"</span>],  <span class="co"># Closer students are graduating - higher the priority</span></span>
 <span id="cb4-7"><a href="#cb4-7"></a>        <span class="op">-</span>payload[<span class="st">"orientation_day"</span>],</span>
 <span id="cb4-8"><a href="#cb4-8"></a>        <span class="co"># Reversing the orientation day value to give priority to students that register earlier</span></span>
 <span id="cb4-9"><a href="#cb4-9"></a>        idx  <span class="co"># Unique identifier of each student</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a>    ]</span>
 <span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a>    <span class="cf">return</span> lst_priority</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="processing-each-student-and-admitting-by-priority-criteria" class="slide level2">
-<h2>Processing each student and admitting by priority criteria</h2>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> process_admissions(payload):</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="cf">return</span> lst_priority</span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="processing-each-student-and-admitting-by-priority-criteria" class="slide level2">
+            <h2>Processing each student and admitting by priority criteria</h2>
+            <div class="cell" data-execution_count="6">
+                <div class="sourceCode cell-code" id="cb5"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> process_admissions(payload):</span>
 <span id="cb5-2"><a href="#cb5-2"></a>    lst <span class="op">=</span> []  <span class="co">#</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>    admitted_students <span class="op">=</span> []  <span class="co"># Initialize a list for admitted students</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="co"># Enumerating through student requests and prioritizing them</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">for</span> idx, student <span class="kw">in</span> <span class="bu">enumerate</span>(payload):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span
+        class="co"># Enumerating through student requests and prioritizing them</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">for</span> idx, student <span class="kw">in</span> <span
+        class="bu">enumerate</span>(payload):</span>
 <span id="cb5-7"><a href="#cb5-7"></a>        priority_student <span class="op">=</span> priority(student, idx)</span>
 <span id="cb5-8"><a href="#cb5-8"></a>        max_heap(lst, priority_student)  <span class="co"># Adding every priority to our max heap</span></span>
 <span id="cb5-9"><a href="#cb5-9"></a></span>
 <span id="cb5-10"><a href="#cb5-10"></a>    <span class="co"># Admitting students up to a limit 25 based on max heap priorities</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">while</span> <span class="bu">len</span>(admitted_students) <span class="op">&lt;</span> <span class="dv">25</span> <span class="kw">and</span> <span class="bu">len</span>(lst) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb5-12"><a href="#cb5-12"></a>        _, computer_science, math, year, orientation_day, idx <span class="op">=</span> pop_max_heap(lst)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">while</span> <span class="bu">len</span>(admitted_students) <span
+        class="op">&lt;</span> <span class="dv">25</span> <span class="kw">and</span> <span
+        class="bu">len</span>(lst) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-12"><a href="#cb5-12"></a>        _, computer_science, math, year, orientation_day, idx <span
+        class="op">=</span> pop_max_heap(lst)</span>
 <span id="cb5-13"><a href="#cb5-13"></a>        admitted_students.append(idx)</span>
 <span id="cb5-14"><a href="#cb5-14"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a>    <span class="cf">return</span> admitted_students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="making-offers-to-admitted-students-if-places-become-available" class="slide level2">
-<h2>Making offers to admitted students if places become available</h2>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> make_offers(payload, admitted_students, dropouts):</span>
+<span id="cb5-15"><a href="#cb5-15"></a>    <span class="cf">return</span> admitted_students</span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="making-offers-to-admitted-students-if-places-become-available" class="slide level2">
+            <h2>Making offers to admitted students if places become available</h2>
+            <div class="cell" data-execution_count="7">
+                <div class="sourceCode cell-code" id="cb6"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> make_offers(payload, admitted_students, dropouts):</span>
 <span id="cb6-2"><a href="#cb6-2"></a>    offers <span class="op">=</span> []</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
 <span id="cb6-4"><a href="#cb6-4"></a>    <span class="co"># Checking for admitted students who haven't dropped the class</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="cf">for</span> idx, request <span class="kw">in</span> <span class="bu">enumerate</span>(payload):</span>
-<span id="cb6-6"><a href="#cb6-6"></a>        <span class="cf">if</span> idx <span class="kw">in</span> admitted_students <span class="kw">and</span> idx <span class="kw">not</span> <span class="kw">in</span> dropouts:</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="cf">for</span> idx, request <span class="kw">in</span> <span
+        class="bu">enumerate</span>(payload):</span>
+<span id="cb6-6"><a href="#cb6-6"></a>        <span class="cf">if</span> idx <span class="kw">in</span> admitted_students <span
+        class="kw">and</span> idx <span class="kw">not</span> <span class="kw">in</span> dropouts:</span>
 <span id="cb6-7"><a href="#cb6-7"></a>            offers.append(request)</span>
 <span id="cb6-8"><a href="#cb6-8"></a></span>
 <span id="cb6-9"><a href="#cb6-9"></a>    <span class="co"># Filling empty spots with the most qualified students</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>    <span class="cf">while</span> <span class="bu">len</span>(offers) <span class="op">&lt;</span> <span class="dv">25</span>:</span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="cf">while</span> <span class="bu">len</span>(offers) <span
+        class="op">&lt;</span> <span class="dv">25</span>:</span>
 <span id="cb6-11"><a href="#cb6-11"></a>        <span class="co"># Checking for the next most qualified student who hasn't been previously admitted</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>        next_student <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>        <span class="cf">for</span> index, request <span class="kw">in</span> <span class="bu">enumerate</span>(payload):</span>
-<span id="cb6-14"><a href="#cb6-14"></a>            <span class="cf">if</span> index <span class="kw">not</span> <span class="kw">in</span> admitted_students <span class="kw">and</span> index <span class="kw">not</span> <span class="kw">in</span> dropouts:</span>
-<span id="cb6-15"><a href="#cb6-15"></a>                <span class="cf">if</span> next_student <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> priority(request, index) <span class="op">&gt;</span> priority(next_student, index):</span>
+<span id="cb6-12"><a href="#cb6-12"></a>        next_student <span class="op">=</span> <span
+        class="va">None</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>        <span class="cf">for</span> index, request <span
+        class="kw">in</span> <span class="bu">enumerate</span>(payload):</span>
+<span id="cb6-14"><a href="#cb6-14"></a>            <span class="cf">if</span> index <span class="kw">not</span> <span
+        class="kw">in</span> admitted_students <span class="kw">and</span> index <span class="kw">not</span> <span
+        class="kw">in</span> dropouts:</span>
+<span id="cb6-15"><a href="#cb6-15"></a>                <span class="cf">if</span> next_student <span
+        class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> priority(request, index) <span
+        class="op">&gt;</span> priority(next_student, index):</span>
 <span id="cb6-16"><a href="#cb6-16"></a>                    next_student <span class="op">=</span> request</span>
 <span id="cb6-17"><a href="#cb6-17"></a></span>
 <span id="cb6-18"><a href="#cb6-18"></a>        <span class="co"># If no more qualified students are available, break the loop</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a>        <span class="cf">if</span> next_student <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb6-19"><a href="#cb6-19"></a>        <span class="cf">if</span> next_student <span class="kw">is</span> <span
+        class="va">None</span>:</span>
 <span id="cb6-20"><a href="#cb6-20"></a>            <span class="cf">break</span></span>
 <span id="cb6-21"><a href="#cb6-21"></a></span>
 <span id="cb6-22"><a href="#cb6-22"></a>        <span class="co"># Marking the student as admitted and add them to the offers list</span></span>
 <span id="cb6-23"><a href="#cb6-23"></a>        admitted_students.append(payload.index(next_student))</span>
 <span id="cb6-24"><a href="#cb6-24"></a>        offers.append(next_student)</span>
 <span id="cb6-25"><a href="#cb6-25"></a></span>
-<span id="cb6-26"><a href="#cb6-26"></a>    <span class="cf">return</span> offers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="make-a-random-fake-data-set-of-size-n" class="slide level2">
-<h2>Make a random fake data set of size n</h2>
-<p>Using the faker package we built a function to create random students to populate our school to test our functions in createing priority ques.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> random_student_admission(size <span class="op">=</span> <span class="dv">40</span>):</span>
+<span id="cb6-26"><a href="#cb6-26"></a>    <span class="cf">return</span> offers</span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="make-a-random-fake-data-set-of-size-n" class="slide level2">
+            <h2>Make a random fake data set of size n</h2>
+            <p>Using the faker package we built a function to create random students to populate our school to test our
+                functions in createing priority ques.</p>
+            <div class="cell" data-execution_count="8">
+                <div class="sourceCode cell-code" id="cb7"><pre
+                        class="sourceCode numberSource python number-lines code-with-copy"><code
+                        class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> random_student_admission(size <span
+                        class="op">=</span> <span class="dv">40</span>):</span>
 <span id="cb7-2"><a href="#cb7-2"></a>    <span class="co"># Initialize faker</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>    <span class="im">from</span> faker <span class="im">import</span> Faker</span>
 <span id="cb7-4"><a href="#cb7-4"></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -563,27 +641,37 @@ Matthew Wilcox
 <span id="cb7-6"><a href="#cb7-6"></a></span>
 <span id="cb7-7"><a href="#cb7-7"></a>    <span class="co"># Create list of student_data dicts</span></span>
 <span id="cb7-8"><a href="#cb7-8"></a>    student_list <span class="op">=</span> []</span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="cf">for</span> individual <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,size):</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="cf">for</span> individual <span class="kw">in</span> <span
+        class="bu">range</span>(<span class="dv">0</span>,size):</span>
 <span id="cb7-10"><a href="#cb7-10"></a>        name <span class="op">=</span> fake.name()</span>
-<span id="cb7-11"><a href="#cb7-11"></a>        student_type <span class="op">=</span> np.random.choice([<span class="st">'Undergraduate'</span>, <span class="st">'Graduate'</span>, <span class="st">'Auditor'</span>])</span>
-<span id="cb7-12"><a href="#cb7-12"></a>        computer_science <span class="op">=</span> np.random.choice([<span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb7-13"><a href="#cb7-13"></a>        math <span class="op">=</span> np.random.choice([<span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb7-14"><a href="#cb7-14"></a>        year <span class="op">=</span> np.random.randint(<span class="dv">0</span>,<span class="dv">5</span>)</span>
-<span id="cb7-15"><a href="#cb7-15"></a>        orientation <span class="op">=</span> np.random.randint(<span class="dv">0</span>,<span class="dv">6</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a>        student_type <span class="op">=</span> np.random.choice([<span
+        class="st">'Undergraduate'</span>, <span class="st">'Graduate'</span>, <span
+        class="st">'Auditor'</span>])</span>
+<span id="cb7-12"><a href="#cb7-12"></a>        computer_science <span class="op">=</span> np.random.choice([<span
+        class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb7-13"><a href="#cb7-13"></a>        math <span class="op">=</span> np.random.choice([<span
+        class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb7-14"><a href="#cb7-14"></a>        year <span class="op">=</span> np.random.randint(<span
+        class="dv">0</span>,<span class="dv">5</span>)</span>
+<span id="cb7-15"><a href="#cb7-15"></a>        orientation <span class="op">=</span> np.random.randint(<span
+        class="dv">0</span>,<span class="dv">6</span>)</span>
 <span id="cb7-16"><a href="#cb7-16"></a>        student_list.append(student_data(name, student_type, computer_science, math, year, orientation))</span>
 <span id="cb7-17"><a href="#cb7-17"></a>    </span>
-<span id="cb7-18"><a href="#cb7-18"></a>    <span class="cf">return</span> student_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="create-admited-sutdents-list" class="slide level2">
-<h2>Create Admited Sutdents List</h2>
-<p>We first create a list of admited students. We select the size of our class and generate a random class of that size. In this case we do 38</p>
-</section>
-<section id="create-admited-sutdents-list-1" class="slide level2">
-<h2>Create Admited Sutdents List</h2>
-<p>We then process them through admissions leaving us with a table of admitted students.</p>
-<div class="cell" data-execution_count="10">
-<div class="cell-output cell-output-stdout">
+<span id="cb7-18"><a href="#cb7-18"></a>    <span class="cf">return</span> student_list</span></code><button
+                        title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+                </div>
+            </div>
+        </section>
+        <section id="create-admited-sutdents-list" class="slide level2">
+            <h2>Create Admited Sutdents List</h2>
+            <p>We first create a list of admited students. We select the size of our class and generate a random class
+                of that size. In this case we do 38</p>
+        </section>
+        <section id="create-admited-sutdents-list-1" class="slide level2">
+            <h2>Create Admited Sutdents List</h2>
+            <p>We then process them through admissions leaving us with a table of admitted students.</p>
+            <div class="cell" data-execution_count="10">
+                <div class="cell-output cell-output-stdout">
 <pre><code>                 name   student_type  computer_science   math  year  \
 0           Sara Sims       Graduate             False   True     1   
 1       Mary Campbell  Undergraduate             False   True     4   
@@ -637,21 +725,28 @@ Matthew Wilcox
 22                5  
 23                4  
 24                2  </code></pre>
-</div>
-</div>
-</section>
-<section id="simulating-dropouts" class="slide level2">
-<h2>Simulating dropouts</h2>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>dropouts <span class="op">=</span> [admitted_students[<span class="dv">3</span>], admitted_students[<span class="dv">17</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We are not going to simulate Elaine Simpson and Luis Oliver Drop out</p>
-</section>
-<section id="making-offers-if-places-become-available" class="slide level2">
-<h2>Making offers if places become available</h2>
-<p>This is now the final class after we had 2 dropouts.</p>
-<div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-stdout">
+                </div>
+            </div>
+        </section>
+        <section id="simulating-dropouts" class="slide level2">
+            <h2>Simulating dropouts</h2>
+            <div class="cell" data-execution_count="11">
+                <div class="sourceCode cell-code" id="cb9">
+                    <pre class="sourceCode numberSource python number-lines code-with-copy"><code
+                            class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>dropouts <span
+                            class="op">=</span> [admitted_students[<span class="dv">3</span>], admitted_students[<span
+                            class="dv">17</span>]]</span></code><button title="Copy to Clipboard"
+                                                                        class="code-copy-button"><i
+                            class="bi"></i></button></pre>
+                </div>
+            </div>
+            <p>We are not going to simulate Elaine Simpson and Luis Oliver Drop out</p>
+        </section>
+        <section id="making-offers-if-places-become-available" class="slide level2">
+            <h2>Making offers if places become available</h2>
+            <p>This is now the final class after we had 2 dropouts.</p>
+            <div class="cell" data-execution_count="12">
+                <div class="cell-output cell-output-stdout">
 <pre><code>                 name   student_type  computer_science   math  year  \
 0           Sara Sims       Graduate             False   True     1   
 1       Mary Campbell  Undergraduate             False   True     4   
@@ -705,32 +800,32 @@ Matthew Wilcox
 22                2  
 23                2  
 24                5  </code></pre>
-</div>
-</div>
-<div class="footer footer-default">
+                </div>
+            </div>
+            <div class="footer footer-default">
 
-</div>
-</section>
+            </div>
+        </section>
     </div>
-  </div>
+</div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="presentation_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
+<script>window.backupDefine = window.define; window.define = undefined;</script>
+<script src="presentation_files/libs/revealjs/dist/reveal.js"></script>
+<!-- reveal.js plugins -->
+<script src="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
 
-  <script src="presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
-  <script>
+<script src="presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/search/search.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+<script src="presentation_files/libs/revealjs/plugin/math/math.js"></script>
+<script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+<script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -921,8 +1016,9 @@ Matthew Wilcox
           RevealZoom
         ]
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1053,7 +1149,9 @@ Matthew Wilcox
         }
       }
     });
-    </script>
-    
 
-</body></html>
+</script>
+
+
+</body>
+</html>

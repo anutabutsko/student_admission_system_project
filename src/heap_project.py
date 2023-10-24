@@ -158,62 +158,10 @@ def random_student_admission(size=40):
         orientation = np.random.randint(0, 6)
         fake_email = fake.free_email()
         fake_address = fake.address()
-        student_list.append(student_data(name, student_type, computer_science, math, year, orientation, fake_email,fake_address))
-        
+        student_list.append(
+            student_data(name, student_type, computer_science, math, year, orientation, fake_email, fake_address))
+
     return student_list
-
-
-# main script
-
-# Creating sample payload
-# data = [student_data("Spider-man", "Graduate", False, True, 2, 2),
-#         student_data("Black Panther", "Undergraduate", True, True, 4, 1),
-#         student_data("Deadpool", "Graduate", False, False, 3, 3),
-#         student_data("Captain America", "Auditor", True, False, 0, 4),
-#         student_data("Ironman", "Graduate", False, False, 2, 1),
-#         student_data("Ant-man", "Undergraduate", False, True, 4, 5),
-#         student_data("Captain Marvel", "Graduate", True, True, 1, 1),
-#         student_data("Superman", "Auditor", True, False, 0, 5),
-#         student_data("Batman", "Graduate", False, False, 4, 2),
-#         student_data("Hulk", "Undergraduate", True, True, 4, 3),
-#         student_data("Iceman", "Graduate", False, False, 1, 3),
-#         student_data("Aquaman", "Auditor", True, True, 2, 4),
-#         student_data("Thor", "Graduate", True, True, 3, 2),
-#         student_data("Asterix", "Undergraduate", False, True, 2, 1),
-#         student_data("Ghost Rider", "Graduate", False, False, 3, 1),
-#         student_data("Hell-boy", "Auditor", True, False, 2, 4),
-#         student_data("Robin", "Graduate", False, True, 4, 5),
-#         student_data("The Rocketeer", "Undergraduate", False, True, 1, 5),
-#         student_data("Watchmen", "Graduate", True, False, 1, 3),
-#         student_data("Catwoman", "Auditor", True, False, 2, 5),
-#         student_data("Flash", "Graduate", True, False, 0, 1),
-#         student_data("Doctor Strange", "Undergraduate", True, True, 2, 3),
-#         student_data("Daredevil", "Graduate", True, False, 3, 5),
-#         student_data("Namor", "Auditor", False, False, 0, 4),
-#         student_data("Vision", "Graduate", True, True, 0, 5),
-#         student_data("Groot", "Auditor", True, True, 1, 5),
-#         student_data("Wasp", "Graduate", True, False, 4, 2),
-#         student_data("Nick Fury", "Undergraduate", False, True, 3, 2),
-#         student_data("Nightcrawler", "Graduate", False, False, 1, 1),
-#         student_data("Wonder Woman", "Auditor", False, True, 0, 1)]
-
-# admitted_students = process_admissions(data)
-
-# # print("Admitted students in order:")
-# # for index, idx in enumerate(admitted_students):
-# #     print(index+1, payload[idx]["name"])
-
-# # Simulating dropouts
-# dropouts = [admitted_students[3], admitted_students[17]]
-
-# # Making offers if places become available
-# offers = make_offers(data, admitted_students, dropouts)
-
-# offer_df = pd.DataFrame(offers)
-
-# print(f"Offers in order:\n {offer_df}")
-
-
 
 
 rand_stud = random_student_admission(27)

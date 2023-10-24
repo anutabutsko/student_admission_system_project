@@ -1,0 +1,74 @@
+Max Heap-based Student Admission System
+
+Project Description:
+
+Introduction
+
+This project focuses on developing an algorithm for a student admission system. The primary objective
+is to efficiently process student applications, prioritize them based on various criteria, and make
+admission offers to the most qualified candidates. This document outlines the algorithm's design,
+design choices, testing methodology, and potential future extensions.
+
+Algorithm Description
+
+The algorithm chosen for this project is the Max Heap Priority Queue algorithm. This algorithm was
+selected due to its favorable time complexity for searching (O(n log n)), as well as its ability to
+keep the highest-priority element readily available at the top of the queue. In our case, the next
+priority student is always at the front of the queue.
+
+Our algorithm starts with the students being input as a list of dictionaries, with each student
+represented by a complete dictionary. From there, a priority ranking is assigned to each student
+based on:
+- Student type (e.g., Graduate students have higher priority)
+- Background in computer science or math
+- Academic year (higher year indicates higher priority)
+- Registration day for orientation (earlier registration is higher priority)
+Additionally, a unique identifier is assigned to each student. The result is a list of students,
+with each element in the list containing the unique identifier and the ranking.
+
+Once we have processed the students and determined who will be admitted to the class, we reattach
+the student details and output the results as a Pandas DataFrame.
+
+Design Choices
+
+Data Structures
+Max Heap: A max heap was used as a priority queue to efficiently maintain the order of students based
+on their admission criteria.
+Student Data Structure: Student information is represented as dictionaries.
+Pandas DataFrame: After processing the students, the algorithm reattaches student details and outputs
+the results as a Pandas DataFrame.
+
+Reasons for Design Choices
+
+Max Heap: Max heaps efficiently maintain the order of students based on their priorities. As students
+are processed and prioritized, a max heap ensures that the highest priority students are always at
+the front, simplifying admission decisions.
+Student Data Structure: Using dictionaries to represent student data simplifies data access and
+manipulation. It provides a clear structure for each student's attributes, making the code more
+readable and maintainable.
+Pandas DataFrame: Utilizing Pandas DataFrames facilitates efficient data handling, transformation,
+and export. It allows for easy data manipulation, analysis, and visualization.
+
+Testing Methodology
+
+Each function in the algorithm was individually tested with various inputs to verify correctness.
+This included testing the max heap operations, priority calculations, and admission processes.
+Then, the entire admission process, from processing applications to making admission offers and
+generating DataFrames, was tested using randomly generated data. This ensured that the complete
+system worked as expected. In addition, the algorithm was tested with edge cases, such as when the
+number of applicants is less than 25 or when there are ties in priority scores. These tests helped
+identify and handle exceptional scenarios.
+The testing process validated the correctness and efficiency of the admission algorithm. It
+successfully prioritized students based on the specified criteria, made admission offers to the most
+qualified candidates, and generated Pandas DataFrames for further analysis. The algorithm
+demonstrated robustness in handling various scenarios and edge cases.
+
+Possible Future Extensions
+
+There are several potential future extensions for this project:
+Web Interface: Developing a user-friendly web interface for applicants to submit their information
+and check their admission status.
+Real-Time Data: Integrating the system with a database to handle real-time data updates and provide
+instant admission results.
+Machine Learning Integration: Utilizing machine learning models to improve the admission process by
+predicting student success or department fit based on historical data.
