@@ -1,12 +1,13 @@
 ---
 title: "Algorithims Heap Project"
-authors: "Matthew Wilcox, Emma Horton, Hanna Butsko, Arianne Pozzi"
+author: "Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox"
 format: revealjs
 jupyter: python3
 ---
 ```{python}
 import pandas as pd
 import numpy as np
+from faker import Faker
 ```
 ## Background
 
@@ -87,13 +88,18 @@ def pop_max_heap(lst):
 We organized each student into a dictionary to use within the functions to retain all of the students data while assigning a priority
 ```{python}
 #| echo: true
-def student_data(name, student_type, computer_science, math, year, orientation_day):
+def student_data(name, student_type, computer_science, math, year, orientation_day, email, street, city, state, zip_code):
     return {"name": name,
             "student_type": student_type,
             "computer_science": computer_science,
             "math": math,
             "year": year,
-            "orientation_day": orientation_day}
+            "orientation_day": orientation_day,
+            "email": email,
+            "Street Address": street,
+            "City": city,
+            "State": state,
+            "ZIP Code": zip_code}
 ```
 
 ## Prioritizing each student
@@ -173,23 +179,26 @@ Using the faker package we built a function to create random students to populat
 
 ```{python}
 #| echo: true
-def random_student_admission(size = 40):
-    # Initialize faker
-    from faker import Faker
-    import numpy as np
+def random_student_admission(size=40):
+    # Initialize Faker
     fake = Faker()
-
     # Create list of student_data dicts
     student_list = []
-    for individual in range(0,size):
+    for individual in range(0, size):
         name = fake.name()
         student_type = np.random.choice(['Undergraduate', 'Graduate', 'Auditor'])
         computer_science = np.random.choice([True, False])
         math = np.random.choice([True, False])
-        year = np.random.randint(0,5)
-        orientation = np.random.randint(0,6)
-        student_list.append(student_data(name, student_type, computer_science, math, year, orientation))
-    
+        year = np.random.randint(0, 5)
+        orientation = np.random.randint(1, 6)
+        fake_email = fake.free_email()
+        fake_address = fake.street_address()
+        fake_city = fake.city()
+        fake_state = fake.state()
+        fake_zip = fake.postcode()
+        student_list.append(
+            student_data(name, student_type, computer_science, math, year, orientation, fake_email, fake_address, fake_city, fake_state, fake_zip))
+
     return student_list
 ```
 
@@ -220,7 +229,7 @@ print(admit_df)
 
 ## Simulating dropouts
 
-We are not going to simulate Two students dropping out.
+We are now goint to simulate two students, `{python} admitted_students[3]`
 
 
 ```{python}
