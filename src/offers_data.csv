@@ -1,26 +1,26 @@
 ,name,student_type,computer_science,math,year,orientation_day,email,Street Address,City,State,ZIP Code
-0,Haley Roy,Auditor,True,True,0,5,snyderheidi@hotmail.com,264 Lori Field,Nixonmouth,Idaho,51047
-1,Cheyenne Shannon,Graduate,True,True,2,5,armstrongsean@hotmail.com,05925 Gonzales Shoals Apt. 085,Alvaradostad,Arkansas,52436
-2,Brian Ross,Auditor,True,True,0,1,harringtonjohn@hotmail.com,40705 Parks Ridge,New Sandra,Louisiana,99013
-3,Randy Sherman,Auditor,True,True,2,4,melissamitchell@gmail.com,329 Brenda Centers,Trujilloton,Virginia,69843
-4,Mrs. Allison Krueger,Auditor,True,True,1,4,susan52@gmail.com,43826 Miles Rapid,Garciaborough,Idaho,59241
-5,Brittany Salazar,Undergraduate,True,True,3,2,tgarza@gmail.com,438 Gonzalez Rue Apt. 368,East Kimberlyfort,Michigan,76990
-6,Lauren Walker,Auditor,True,True,2,1,wwagner@gmail.com,976 Emily Roads Apt. 210,North Meganbury,Alaska,02126
-7,Erin Wagner,Undergraduate,True,False,3,5,allisonrios@gmail.com,9001 Strickland Village Apt. 414,Johnmouth,Virginia,36453
-8,Andrew May,Undergraduate,True,True,3,3,tkent@yahoo.com,8965 David Mews Apt. 466,Victoriaburgh,Illinois,96436
-9,Adam Diaz,Undergraduate,True,False,2,4,theresa31@hotmail.com,3460 Victoria Inlet Suite 353,Port Adam,New Jersey,50923
-10,Karen Anderson,Auditor,True,False,0,1,dsmith@hotmail.com,156 Lee Ranch,Connerview,California,79883
-11,Richard Anthony,Auditor,True,True,1,2,richardporter@gmail.com,2789 Jason Haven Apt. 286,Courtneyland,Virginia,50355
-12,Phillip West,Auditor,False,False,3,2,williamsfrances@gmail.com,984 Bryant Station Suite 953,North Anna,Arizona,32726
-13,Molly Nguyen,Graduate,True,True,4,5,michaelandrade@yahoo.com,61343 Francis Groves,Sharptown,Hawaii,33886
-14,Keith Rogers,Auditor,True,False,4,5,sarah74@gmail.com,34647 Brianna Spur Suite 848,Pittsburgh,Missouri,53232
-15,Erica Garcia,Undergraduate,False,False,1,3,kperez@yahoo.com,833 Dana Port Suite 624,New Amy,California,46554
-16,Michael Parker,Auditor,True,False,2,2,fisherholly@hotmail.com,3460 Victor Fork,Snyderchester,Ohio,97295
-17,Julia Hayes,Graduate,False,True,0,4,joneskim@yahoo.com,9816 Taylor Street Apt. 748,Lake Janicestad,South Carolina,89795
-18,Aaron Morrison,Undergraduate,True,True,3,3,lindahorne@gmail.com,224 Leslie Junction Apt. 238,Port Darrellton,Maryland,51050
-19,Heather Shah,Auditor,True,True,0,4,frankwilliams@gmail.com,4595 Cole Run,Michaelbury,Rhode Island,96404
-20,Joshua Griffith,Undergraduate,True,True,2,4,patriciapeterson@gmail.com,9848 Lisa Extensions Apt. 724,East Jeremiahshire,Mississippi,06342
-21,Gordon Becker,Auditor,True,False,2,1,colestewart@gmail.com,6459 Townsend Wall,Hernandezstad,West Virginia,67736
-22,Crystal Marshall,Auditor,True,True,0,3,robert19@hotmail.com,34573 Jones Station Suite 846,Lake Randyburgh,New Mexico,50112
-23,Allen Murphy,Graduate,True,False,3,1,yalvarado@hotmail.com,51140 Lopez Oval,New Sharon,South Carolina,15367
-24,Kayla Howell,Graduate,True,True,3,1,sjones@yahoo.com,6256 Justin Rest Apt. 170,Jasonmouth,Louisiana,44075
+0,Alicia Logan,Graduate,True,True,0,3,julia81@yahoo.com,38511 Henson Island,South Davidland,North Dakota,37129
+1,Erica Jimenez,Graduate,True,False,0,4,wharrison@yahoo.com,095 Tara Land,South Ryan,Montana,88765
+2,Duane Smith,Auditor,False,False,4,3,michellejones@gmail.com,90490 Ramos Springs Suite 119,Mccoyton,Ohio,72326
+3,Alejandro Jones,Undergraduate,True,False,1,3,lweber@hotmail.com,035 Mckenzie Bypass Suite 185,Kingbury,Michigan,42632
+4,Christopher Burke,Auditor,False,True,3,2,daniel46@gmail.com,15371 Meadows Fall Suite 525,Ruizmouth,Missouri,97472
+5,Matthew Mckinney,Undergraduate,True,True,2,3,terryandrew@gmail.com,29219 Justin Groves,South Jonathanstad,Missouri,31431
+6,Andrew Smith,Undergraduate,False,False,1,4,dyoung@hotmail.com,76044 Raymond Fords Suite 578,Michaelburgh,Nevada,94502
+7,Rickey Jones,Auditor,False,True,1,4,renee23@yahoo.com,45118 Harvey Trafficway Suite 970,New Johnshire,Maine,81767
+8,Emily Giles,Graduate,True,True,4,3,rcoleman@yahoo.com,6493 Calhoun Squares,North Emmaview,Tennessee,11780
+9,David Obrien,Graduate,True,True,3,4,erika98@gmail.com,39706 Jacob Stream,Port Bradleyview,Washington,55394
+10,Emily Hernandez,Undergraduate,False,False,4,1,turnershelby@hotmail.com,4697 Phillip Ranch,New Eddieburgh,North Dakota,13881
+11,Katherine Kelly,Graduate,False,True,3,4,creed@gmail.com,3990 Berg Ports,Hallton,Florida,31612
+12,Sarah Mathews,Graduate,False,True,1,5,carrillosamuel@hotmail.com,963 Mcfarland Falls Suite 931,East Thomas,Alabama,22647
+13,Adam Anthony,Graduate,True,False,3,5,gonzalezhannah@yahoo.com,65916 Hoffman Gateway Apt. 120,Debrafort,New York,67271
+14,Teresa Ellis MD,Graduate,False,False,3,5,dannymiller@hotmail.com,562 Bowen Stravenue Apt. 099,Michaelmouth,North Carolina,74505
+15,Daniel Mccall,Undergraduate,True,True,2,1,jeffrey25@gmail.com,292 Vaughn Row Apt. 205,Scottmouth,Idaho,97567
+16,Shari Wallace,Graduate,True,True,0,2,johnsonmichael@gmail.com,037 Jackson Forest Suite 976,Port Michael,Wisconsin,07754
+17,Lance Sullivan,Graduate,False,False,2,4,cindyjones@gmail.com,6242 Williams Plains Suite 814,Smithshire,Virginia,60510
+18,Jacqueline Robinson,Undergraduate,False,False,0,3,wwilliams@hotmail.com,1877 Faith Radial Apt. 473,Lindsaychester,Arizona,27857
+19,Richard Cook,Undergraduate,True,False,2,1,rebecca29@gmail.com,26646 Albert Center Suite 017,Austinport,Delaware,45123
+20,Pamela Gomez,Auditor,False,False,3,3,russelljesse@yahoo.com,339 Baker Wall Apt. 621,New Jessica,Wyoming,11444
+21,Carrie Edwards,Auditor,False,False,4,3,riverachristopher@gmail.com,9399 James Lakes Suite 352,Port Sandrahaven,Utah,21325
+22,Samuel Reed,Graduate,False,False,3,2,joyhawkins@gmail.com,975 Timothy Turnpike,Johnmouth,Iowa,70665
+23,Sierra Bridges,Graduate,False,False,4,4,etorres@hotmail.com,712 Brenda Mills,Jaredborough,Wyoming,06307
+24,Jacob Martinez,Graduate,True,False,3,2,rkemp@yahoo.com,95360 Carrillo Hill,Emilyburgh,Maine,38495
