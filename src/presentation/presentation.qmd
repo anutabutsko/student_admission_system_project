@@ -9,7 +9,13 @@ import pandas as pd
 import numpy as np
 from faker import Faker
 ```
-## Background
+## Purpose
+
+- Process Student Applications
+- Prioritize them based on various criteria
+- Make admission offers to most qualified/preferred candidates
+
+
 
 ## Max Heap Implemenation
 
@@ -249,3 +255,21 @@ offers = make_offers(rand_class, admitted_students, dropouts)
 offer_df = pd.DataFrame(offers)
 print(offer_df)
 ```
+
+# Power BI Implementation
+
+## Power Bi - Data Model
+
+![](data_model.png)
+
+## Power Bi - Not Admitted Students
+
+![](Not_AdmittedStudents.png)
+
+## Power Bi - Admitted Students
+
+![](Admitted_students.png)
+
+## Power Bi - Acceptance email
+
+![](YoureAdmittedEmailTemp.png)

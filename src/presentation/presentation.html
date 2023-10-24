@@ -399,8 +399,13 @@ Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox
 </div>
 
 </section>
-<section id="background" class="slide level2">
-<h2>Background</h2>
+<section id="purpose" class="slide level2">
+<h2>Purpose</h2>
+<ul>
+<li>Process Student Applications</li>
+<li>Prioritize them based on various criteria</li>
+<li>Make admission offers to most qualified/preferred candidates</li>
+</ul>
 </section>
 <section id="max-heap-implemenation" class="slide level2">
 <h2>Max Heap Implemenation</h2>
@@ -571,7 +576,7 @@ Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox
 <span id="cb7-9"><a href="#cb7-9"></a>        computer_science <span class="op">=</span> np.random.choice([<span class="va">True</span>, <span class="va">False</span>])</span>
 <span id="cb7-10"><a href="#cb7-10"></a>        math <span class="op">=</span> np.random.choice([<span class="va">True</span>, <span class="va">False</span>])</span>
 <span id="cb7-11"><a href="#cb7-11"></a>        year <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb7-12"><a href="#cb7-12"></a>        orientation <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">6</span>)</span>
+<span id="cb7-12"><a href="#cb7-12"></a>        orientation <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">6</span>)</span>
 <span id="cb7-13"><a href="#cb7-13"></a>        fake_email <span class="op">=</span> fake.free_email()</span>
 <span id="cb7-14"><a href="#cb7-14"></a>        fake_address <span class="op">=</span> fake.street_address()</span>
 <span id="cb7-15"><a href="#cb7-15"></a>        fake_city <span class="op">=</span> fake.city()</span>
@@ -592,113 +597,113 @@ Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox
 <p>We then process them through admissions leaving us with a table of admitted students.</p>
 <div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
-<pre><code>                    name   student_type  computer_science   math  year  \
-0          Douglas Burns       Graduate             False   True     2   
-1         Andrea Roberts  Undergraduate             False  False     3   
-2         Mark Gallagher        Auditor              True   True     2   
-3             Dana Moore  Undergraduate              True  False     2   
-4           David Dennis        Auditor              True   True     2   
-5       Stephanie Becker       Graduate             False  False     2   
-6         Sarah Smith MD       Graduate             False  False     4   
-7   Christopher Martinez  Undergraduate             False   True     2   
-8           David Thomas  Undergraduate             False   True     3   
-9          Laura Aguilar       Graduate              True   True     4   
-10         David Sellers       Graduate              True  False     1   
-11       Charles Sweeney        Auditor              True  False     4   
-12         Molly Patrick       Graduate             False  False     3   
-13            Mary Duran        Auditor             False   True     2   
-14         Denise Hughes       Graduate             False   True     0   
-15       Natalie Esparza  Undergraduate             False  False     2   
-16         Martin Morris       Graduate             False  False     0   
-17         Tonya Morales       Graduate              True  False     2   
-18           Derek Smith        Auditor              True  False     3   
-19          Dr. Amy Soto  Undergraduate             False  False     2   
-20          Ryan Freeman       Graduate             False   True     1   
-21       Jessica Elliott       Graduate             False  False     0   
-22      Christie Hammond       Graduate              True  False     2   
-23          Maria Snyder       Graduate              True  False     4   
-24        Connor Johnson       Graduate              True   True     4   
+<pre><code>                 name   student_type  computer_science   math  year  \
+0          Jason Soto  Undergraduate              True  False     3   
+1       Rebecca Small  Undergraduate             False  False     3   
+2        Amber Morris       Graduate              True  False     3   
+3      Betty Williams        Auditor              True   True     3   
+4        Sally Powers  Undergraduate              True  False     4   
+5     Daniel Castillo       Graduate              True   True     4   
+6          Jack Baker       Graduate             False  False     1   
+7           James Lee        Auditor             False   True     4   
+8     Matthew Aguilar       Graduate             False   True     1   
+9         Rachel Boyd       Graduate             False   True     4   
+10        Jacob Bowen  Undergraduate              True  False     3   
+11      Sarah Roberts       Graduate              True  False     2   
+12      Stacey Carter  Undergraduate             False   True     3   
+13       Curtis Lewis  Undergraduate             False   True     4   
+14  Marcus Cunningham       Graduate              True   True     1   
+15   Christina Wilson       Graduate              True  False     3   
+16       Deborah Gray       Graduate             False  False     2   
+17         John Smith  Undergraduate             False   True     3   
+18        Cindy Blair       Graduate             False  False     4   
+19       Andrea Jones        Auditor              True  False     3   
+20       Kim Saunders  Undergraduate              True   True     3   
+21    Margaret Tanner  Undergraduate             False  False     3   
+22       Laura Wilson  Undergraduate              True   True     3   
+23       Paul Goodman       Graduate              True   True     4   
+24          Jay Perry       Graduate              True  False     2   
 
-    orientation_day                        email  \
-0                 1          timothy75@gmail.com   
-1                 0             john73@yahoo.com   
-2                 2    philipfernandez@gmail.com   
-3                 2         mitchell35@yahoo.com   
-4                 2      amandasharp@hotmail.com   
-5                 1         mchapman@hotmail.com   
-6                 3             sean47@yahoo.com   
-7                 3            brian92@gmail.com   
-8                 0    stephenrobinson@yahoo.com   
-9                 4      timothymoreno@yahoo.com   
-10                0           jose59@hotmail.com   
-11                4  williamsmelissa@hotmail.com   
-12                5       ericstephens@yahoo.com   
-13                0            dsims@hotmail.com   
-14                3      rogerswendy@hotmail.com   
-15                3           joseph58@yahoo.com   
-16                3           ijohnson@gmail.com   
-17                1      richardnorton@yahoo.com   
-18                1           kara12@hotmail.com   
-19                4    stephanievaughn@yahoo.com   
-20                0          zachary18@yahoo.com   
-21                1         dkrueger@hotmail.com   
-22                0            dchavez@yahoo.com   
-23                1      dennisjames@hotmail.com   
-24                0             mblair@yahoo.com   
+    orientation_day                       email  \
+0                 4      virginia02@hotmail.com   
+1                 1    rosariotracy@hotmail.com   
+2                 2     bryanwilliams@gmail.com   
+3                 3  allisonkrueger@hotmail.com   
+4                 4         angel48@hotmail.com   
+5                 1       houstonjohn@yahoo.com   
+6                 5        ronald06@hotmail.com   
+7                 4       richardross@gmail.com   
+8                 5        vanceoscar@yahoo.com   
+9                 3          sheila13@yahoo.com   
+10                4         deborah70@yahoo.com   
+11                2   jonathanjohnson@yahoo.com   
+12                1       sharplori@hotmail.com   
+13                5         dantran@hotmail.com   
+14                2   mclaughlinbrian@yahoo.com   
+15                4      levicarter@hotmail.com   
+16                5      johnphillips@yahoo.com   
+17                4         rcardenas@gmail.com   
+18                3  petersjonathan@hotmail.com   
+19                4           ellen06@gmail.com   
+20                2            jhorne@gmail.com   
+21                5    laurenfisher@hotmail.com   
+22                5     lindahoward@hotmail.com   
+23                2      wattsnatasha@gmail.com   
+24                4            bevans@gmail.com   
 
-                     Street Address                City           State  \
-0                9365 Janet Estates       North Melissa           Idaho   
-1                39444 Brianna Flat          Douglaston          Kansas   
-2                  0815 Garcia Loop    New Courtneystad        Illinois   
-3       082 Andrew Drives Suite 888         Dillonmouth        New York   
-4      3453 Greer Centers Suite 218         Spenceburgh          Hawaii   
-5              96984 Anderson Roads          Port Shari          Alaska   
-6               958 Suzanne Meadows      New Lindseyton          Kansas   
-7                 044 Rosales Field         West Arthur      New Jersey   
-8                   8250 Munoz Oval          Smithshire          Hawaii   
-9              92357 Patton Prairie     Lake Monicabury          Hawaii   
-10    358 Dustin Parkways Suite 074      Port Elizabeth      New Mexico   
-11                 185 Wagner River          West Karen         Wyoming   
-12       81967 Kyle Locks Suite 718     Valenzuelashire         Florida   
-13      301 Michael Drive Suite 813       North Felicia  North Carolina   
-14      3107 Edwards Cliff Apt. 077        West Cassidy        Michigan   
-15     97921 Melinda Ramp Suite 892   North Sharonmouth           Idaho   
-16    321 Kristin Circles Suite 164          South John      New Mexico   
-17      14418 Mccoy Cliff Suite 300        Alexanderton        New York   
-18            89444 Stevens Station     Montgomerymouth          Nevada   
-19     69292 Casey Viaduct Apt. 645          East Kelly       Minnesota   
-20      26744 Terry Knoll Suite 466     New Danielville        Arkansas   
-21  4298 Christopher Loaf Suite 290       Nicholasville          Hawaii   
-22               8211 Suarez Brooks  South Spencershire   West Virginia   
-23        8518 Rice Fields Apt. 566         Vanessabury        New York   
-24            0875 Dominguez Branch            Markview            Iowa   
+                    Street Address                City           State  \
+0        341 Paul Landing Apt. 001        West Heather    Pennsylvania   
+1                51820 Ortiz Hills          Cortezview            Iowa   
+2       88554 Norman Lake Apt. 771         Rachaelview        Arkansas   
+3             34637 Holloway Hills     North Carlville           Idaho   
+4                  4855 Diana Well        Milesborough          Oregon   
+5         8541 Chad Park Suite 432         Millershire          Hawaii   
+6       7646 White Avenue Apt. 691       Armstrongfurt  South Carolina   
+7          74025 Clements Villages         Lake Angela        Michigan   
+8        8565 Wyatt Vista Apt. 103        East Brianna       Minnesota   
+9             6290 Taylor Crescent          West James    North Dakota   
+10  58108 Sonia Mountains Apt. 024          Donaldside         Georgia   
+11       745 Pitts Summit Apt. 234       Ericksonmouth        New York   
+12            46125 Patterson Fall         Rogersshire   Massachusetts   
+13       543 White Ports Suite 553         New Brianna        Arkansas   
+14         347 May Ranch Suite 880     Schwartzborough       Wisconsin   
+15       856 Darius Lane Suite 896      Lake Bryanstad    South Dakota   
+16    61932 Lindsay River Apt. 253         Patrickview  South Carolina   
+17       568 Robert Light Apt. 817           Davisberg            Utah   
+18     6732 Salazar Forks Apt. 599       Campbellmouth            Iowa   
+19             8584 Leonard Branch            Hallview        Arkansas   
+20      571 Andrew Plains Apt. 660          Ronaldport        Virginia   
+21       286 Holt Freeway Apt. 672    North Laceyville        Maryland   
+22       1300 Walker Camp Apt. 435      Port Emilyview         Alabama   
+23              84757 Terri Bypass            Aaronton     Mississippi   
+24              9010 Garcia Summit  West Cliffordshire          Alaska   
 
    ZIP Code  
-0     55573  
-1     51602  
-2     95481  
-3     20170  
-4     03972  
-5     08374  
-6     25799  
-7     20326  
-8     47682  
-9     43973  
-10    21496  
-11    26790  
-12    85972  
-13    26168  
-14    09776  
-15    82230  
-16    87426  
-17    34890  
-18    72207  
-19    54038  
-20    85898  
-21    29708  
-22    41959  
-23    80411  
-24    27768  </code></pre>
+0     34729  
+1     69684  
+2     88492  
+3     14571  
+4     51622  
+5     15564  
+6     49288  
+7     06728  
+8     50709  
+9     49594  
+10    43146  
+11    48875  
+12    05104  
+13    29634  
+14    96408  
+15    12421  
+16    60620  
+17    24559  
+18    76484  
+19    31031  
+20    09523  
+21    87712  
+22    23032  
+23    16824  
+24    59652  </code></pre>
 </div>
 </div>
 </section>
@@ -714,119 +719,140 @@ Hannah Butsko, Emma Horton, Arianne Pozzi, Matthew Wilcox
 <p>This is now the final class after we had 2 dropouts.</p>
 <div class="cell" data-execution_count="12">
 <div class="cell-output cell-output-stdout">
-<pre><code>                    name   student_type  computer_science   math  year  \
-0          Douglas Burns       Graduate             False   True     2   
-1         Andrea Roberts  Undergraduate             False  False     3   
-2         Mark Gallagher        Auditor              True   True     2   
-3             Dana Moore  Undergraduate              True  False     2   
-4           David Dennis        Auditor              True   True     2   
-5       Stephanie Becker       Graduate             False  False     2   
-6         Sarah Smith MD       Graduate             False  False     4   
-7   Christopher Martinez  Undergraduate             False   True     2   
-8           David Thomas  Undergraduate             False   True     3   
-9          David Sellers       Graduate              True  False     1   
-10       Charles Sweeney        Auditor              True  False     4   
-11         Molly Patrick       Graduate             False  False     3   
-12            Mary Duran        Auditor             False   True     2   
-13         Denise Hughes       Graduate             False   True     0   
-14       Natalie Esparza  Undergraduate             False  False     2   
-15         Martin Morris       Graduate             False  False     0   
-16         Tonya Morales       Graduate              True  False     2   
-17          Dr. Amy Soto  Undergraduate             False  False     2   
-18          Ryan Freeman       Graduate             False   True     1   
-19       Jessica Elliott       Graduate             False  False     0   
-20      Christie Hammond       Graduate              True  False     2   
-21          Maria Snyder       Graduate              True  False     4   
-22        Connor Johnson       Graduate              True   True     4   
-23     Sharon Rogers DVM        Auditor              True   True     2   
-24        Timothy Lawson  Undergraduate             False   True     2   
+<pre><code>                 name   student_type  computer_science   math  year  \
+0          Jason Soto  Undergraduate              True  False     3   
+1       Rebecca Small  Undergraduate             False  False     3   
+2        Amber Morris       Graduate              True  False     3   
+3      Betty Williams        Auditor              True   True     3   
+4        Sally Powers  Undergraduate              True  False     4   
+5     Daniel Castillo       Graduate              True   True     4   
+6          Jack Baker       Graduate             False  False     1   
+7           James Lee        Auditor             False   True     4   
+8     Matthew Aguilar       Graduate             False   True     1   
+9         Jacob Bowen  Undergraduate              True  False     3   
+10      Sarah Roberts       Graduate              True  False     2   
+11      Stacey Carter  Undergraduate             False   True     3   
+12       Curtis Lewis  Undergraduate             False   True     4   
+13  Marcus Cunningham       Graduate              True   True     1   
+14   Christina Wilson       Graduate              True  False     3   
+15       Deborah Gray       Graduate             False  False     2   
+16         John Smith  Undergraduate             False   True     3   
+17        Cindy Blair       Graduate             False  False     4   
+18       Andrea Jones        Auditor              True  False     3   
+19    Margaret Tanner  Undergraduate             False  False     3   
+20       Laura Wilson  Undergraduate              True   True     3   
+21       Paul Goodman       Graduate              True   True     4   
+22          Jay Perry       Graduate              True  False     2   
+23         Lisa Smith  Undergraduate              True   True     3   
+24        Joseph Ruiz  Undergraduate             False   True     2   
 
-    orientation_day                        email  \
-0                 1          timothy75@gmail.com   
-1                 0             john73@yahoo.com   
-2                 2    philipfernandez@gmail.com   
-3                 2         mitchell35@yahoo.com   
-4                 2      amandasharp@hotmail.com   
-5                 1         mchapman@hotmail.com   
-6                 3             sean47@yahoo.com   
-7                 3            brian92@gmail.com   
-8                 0    stephenrobinson@yahoo.com   
-9                 0           jose59@hotmail.com   
-10                4  williamsmelissa@hotmail.com   
-11                5       ericstephens@yahoo.com   
-12                0            dsims@hotmail.com   
-13                3      rogerswendy@hotmail.com   
-14                3           joseph58@yahoo.com   
-15                3           ijohnson@gmail.com   
-16                1      richardnorton@yahoo.com   
-17                4    stephanievaughn@yahoo.com   
-18                0          zachary18@yahoo.com   
-19                1         dkrueger@hotmail.com   
-20                0            dchavez@yahoo.com   
-21                1      dennisjames@hotmail.com   
-22                0             mblair@yahoo.com   
-23                5              icook@gmail.com   
-24                5           leslie79@gmail.com   
+    orientation_day                       email  \
+0                 4      virginia02@hotmail.com   
+1                 1    rosariotracy@hotmail.com   
+2                 2     bryanwilliams@gmail.com   
+3                 3  allisonkrueger@hotmail.com   
+4                 4         angel48@hotmail.com   
+5                 1       houstonjohn@yahoo.com   
+6                 5        ronald06@hotmail.com   
+7                 4       richardross@gmail.com   
+8                 5        vanceoscar@yahoo.com   
+9                 4         deborah70@yahoo.com   
+10                2   jonathanjohnson@yahoo.com   
+11                1       sharplori@hotmail.com   
+12                5         dantran@hotmail.com   
+13                2   mclaughlinbrian@yahoo.com   
+14                4      levicarter@hotmail.com   
+15                5      johnphillips@yahoo.com   
+16                4         rcardenas@gmail.com   
+17                3  petersjonathan@hotmail.com   
+18                4           ellen06@gmail.com   
+19                5    laurenfisher@hotmail.com   
+20                5     lindahoward@hotmail.com   
+21                2      wattsnatasha@gmail.com   
+22                4            bevans@gmail.com   
+23                5            ejones@yahoo.com   
+24                1       madison76@hotmail.com   
 
-                     Street Address                City           State  \
-0                9365 Janet Estates       North Melissa           Idaho   
-1                39444 Brianna Flat          Douglaston          Kansas   
-2                  0815 Garcia Loop    New Courtneystad        Illinois   
-3       082 Andrew Drives Suite 888         Dillonmouth        New York   
-4      3453 Greer Centers Suite 218         Spenceburgh          Hawaii   
-5              96984 Anderson Roads          Port Shari          Alaska   
-6               958 Suzanne Meadows      New Lindseyton          Kansas   
-7                 044 Rosales Field         West Arthur      New Jersey   
-8                   8250 Munoz Oval          Smithshire          Hawaii   
-9     358 Dustin Parkways Suite 074      Port Elizabeth      New Mexico   
-10                 185 Wagner River          West Karen         Wyoming   
-11       81967 Kyle Locks Suite 718     Valenzuelashire         Florida   
-12      301 Michael Drive Suite 813       North Felicia  North Carolina   
-13      3107 Edwards Cliff Apt. 077        West Cassidy        Michigan   
-14     97921 Melinda Ramp Suite 892   North Sharonmouth           Idaho   
-15    321 Kristin Circles Suite 164          South John      New Mexico   
-16      14418 Mccoy Cliff Suite 300        Alexanderton        New York   
-17     69292 Casey Viaduct Apt. 645          East Kelly       Minnesota   
-18      26744 Terry Knoll Suite 466     New Danielville        Arkansas   
-19  4298 Christopher Loaf Suite 290       Nicholasville          Hawaii   
-20               8211 Suarez Brooks  South Spencershire   West Virginia   
-21        8518 Rice Fields Apt. 566         Vanessabury        New York   
-22            0875 Dominguez Branch            Markview            Iowa   
-23                   6075 Ryan Road       Caldwellshire  North Carolina   
-24  43892 Andrew Junction Suite 753          North Gary         Alabama   
+                    Street Address                City           State  \
+0        341 Paul Landing Apt. 001        West Heather    Pennsylvania   
+1                51820 Ortiz Hills          Cortezview            Iowa   
+2       88554 Norman Lake Apt. 771         Rachaelview        Arkansas   
+3             34637 Holloway Hills     North Carlville           Idaho   
+4                  4855 Diana Well        Milesborough          Oregon   
+5         8541 Chad Park Suite 432         Millershire          Hawaii   
+6       7646 White Avenue Apt. 691       Armstrongfurt  South Carolina   
+7          74025 Clements Villages         Lake Angela        Michigan   
+8        8565 Wyatt Vista Apt. 103        East Brianna       Minnesota   
+9   58108 Sonia Mountains Apt. 024          Donaldside         Georgia   
+10       745 Pitts Summit Apt. 234       Ericksonmouth        New York   
+11            46125 Patterson Fall         Rogersshire   Massachusetts   
+12       543 White Ports Suite 553         New Brianna        Arkansas   
+13         347 May Ranch Suite 880     Schwartzborough       Wisconsin   
+14       856 Darius Lane Suite 896      Lake Bryanstad    South Dakota   
+15    61932 Lindsay River Apt. 253         Patrickview  South Carolina   
+16       568 Robert Light Apt. 817           Davisberg            Utah   
+17     6732 Salazar Forks Apt. 599       Campbellmouth            Iowa   
+18             8584 Leonard Branch            Hallview        Arkansas   
+19       286 Holt Freeway Apt. 672    North Laceyville        Maryland   
+20       1300 Walker Camp Apt. 435      Port Emilyview         Alabama   
+21              84757 Terri Bypass            Aaronton     Mississippi   
+22              9010 Garcia Summit  West Cliffordshire          Alaska   
+23             24847 Melanie Ports         Sanchezbury        Arkansas   
+24     7726 Maurice Loaf Suite 892    South Dianehaven   Massachusetts   
 
    ZIP Code  
-0     55573  
-1     51602  
-2     95481  
-3     20170  
-4     03972  
-5     08374  
-6     25799  
-7     20326  
-8     47682  
-9     21496  
-10    26790  
-11    85972  
-12    26168  
-13    09776  
-14    82230  
-15    87426  
-16    34890  
-17    54038  
-18    85898  
-19    29708  
-20    41959  
-21    80411  
-22    27768  
-23    52853  
-24    61767  </code></pre>
+0     34729  
+1     69684  
+2     88492  
+3     14571  
+4     51622  
+5     15564  
+6     49288  
+7     06728  
+8     50709  
+9     43146  
+10    48875  
+11    05104  
+12    29634  
+13    96408  
+14    12421  
+15    60620  
+16    24559  
+17    76484  
+18    31031  
+19    87712  
+20    23032  
+21    16824  
+22    59652  
+23    75794  
+24    86797  </code></pre>
 </div>
-</div>
-<div class="footer footer-default">
-
 </div>
 </section>
+<section>
+<section id="power-bi-implementation" class="title-slide slide level1 center">
+<h1>Power BI Implementation</h1>
+
+</section>
+<section id="power-bi---data-model" class="slide level2">
+<h2>Power Bi - Data Model</h2>
+
+<img data-src="data_model.png" class="r-stretch"></section>
+<section id="power-bi---not-admitted-students" class="slide level2">
+<h2>Power Bi - Not Admitted Students</h2>
+
+<img data-src="Not_AdmittedStudents.png" class="r-stretch"></section>
+<section id="power-bi---admitted-students" class="slide level2">
+<h2>Power Bi - Admitted Students</h2>
+
+<img data-src="Admitted_students.png" class="r-stretch"></section>
+<section id="power-bi---acceptance-email" class="slide level2">
+<h2>Power Bi - Acceptance email</h2>
+
+<img data-src="YoureAdmittedEmailTemp.png" class="r-stretch"><div class="footer footer-default">
+
+</div>
+</section></section>
     </div>
   </div>
 
