@@ -69,7 +69,7 @@ def pop_max_heap(lst):
 
 
 # Function that organizes student payload into a dictionary
-def student_data(name, student_type, computer_science, math, year, orientation_day, email, fake_address):
+def student_data(name, student_type, computer_science, math, year, orientation_day, email, street, city, state, zip_code):
     return {"name": name,
             "student_type": student_type,
             "computer_science": computer_science,
@@ -77,7 +77,10 @@ def student_data(name, student_type, computer_science, math, year, orientation_d
             "year": year,
             "orientation_day": orientation_day,
             "email": email,
-            "address": fake_address}
+            "Street Address": street,
+            "City": city,
+            "State": state,
+            "ZIP Code": zip_code}
 
 
 # Prioritizing each student
@@ -157,18 +160,25 @@ def random_student_admission(size=40):
         year = np.random.randint(0, 5)
         orientation = np.random.randint(0, 6)
         fake_email = fake.free_email()
-        fake_address = fake.address()
+        fake_address = fake.street_address()
+        fake_city = fake.city()
+        fake_state = fake.state()
+        fake_zip = fake.postcode()
         student_list.append(
-            student_data(name, student_type, computer_science, math, year, orientation, fake_email, fake_address))
+            student_data(name, student_type, computer_science, math, year, orientation, fake_email, fake_address, fake_city, fake_state, fake_zip))
 
     return student_list
 
-
+# Create Random Student List
 rand_stud = random_student_admission(27)
+rand_stud_df = pd.DataFrame(rand_stud)
+
+# Process Student admissions with 2 dropouts
 admitted_students = process_admissions(rand_stud)
 dropouts = [admitted_students[3], admitted_students[17]]
+# Make Offers
 offers = make_offers(rand_stud, admitted_students, dropouts)
-offer_df = pd.DataFrame(offers)
-print(f"Offers in order:\n {offer_df}")
+offers_df = pd.DataFrame(offers)
+print(f"Offers in order:\n {offers_df}")
 
-offer_df.to_csv('offers_data.csv')
+offers_df.to_csv('offers_data.csv')

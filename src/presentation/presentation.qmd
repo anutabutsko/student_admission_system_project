@@ -32,6 +32,7 @@ def max_heap(lst, value):
 
 
 ## Pop max heap implementation
+
 ```{python}
 #| echo: true
 def pop_max_heap(lst):
@@ -96,6 +97,7 @@ def student_data(name, student_type, computer_science, math, year, orientation_d
 ```
 
 ## Prioritizing each student
+
 ```{python}
 #| echo: true
 def priority(payload, idx):
@@ -113,6 +115,7 @@ def priority(payload, idx):
 ```
 
 ## Processing each student and admitting by priority criteria
+
 ```{python}
 #| echo: true
 def process_admissions(payload):
@@ -133,6 +136,7 @@ def process_admissions(payload):
 ```
 
 ## Making offers to admitted students if places become available
+
 ```{python}
 #| echo: true
 def make_offers(payload, admitted_students, dropouts):
@@ -198,7 +202,9 @@ rand_class = random_student_admission(38)
 ```
 
 ## Create Admited Sutdents List 
+
 We then process them through admissions leaving us with a table of admitted students.
+
 ```{python}
 admitted_students = process_admissions(rand_class)
 
@@ -213,11 +219,14 @@ print(admit_df)
 ```
 
 ## Simulating dropouts
+
+We are not going to simulate Two students dropping out.
+
+
 ```{python}
 #| echo: true
 dropouts = [admitted_students[3], admitted_students[17]]
 ```
-We are not going to simulate Elaine Simpson and Luis Oliver Drop out
 
 ## Making offers if places become available
 
