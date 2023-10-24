@@ -66,6 +66,9 @@ successfully prioritized students based on the specified criteria, made admissio
 qualified candidates, and generated Pandas DataFrames for further analysis. The algorithm
 demonstrated robustness in handling various scenarios and edge cases.
 
+Implementation
+Every day the python script is ran on Microsoft Cloud Severs at 5AM, 1PM, 5PM where the data is automatically ran using the python script and an updated dashboard is rendered for the Administrative staff to interface with. The staff will be able to filter the student data for students that are admitted/not admitted, by student type and by level. The staff are able to intuitively and securely export data to CSV or excel, view the demographics and perform self service BI on the students applying for seats in Pat's esteemed algorithms class (such as view the major and year treemap and utilize a matrix with counts of student type). Additionally, the administrators can drill down into students that have been admitted into the program by right clicking the name and which will then bring up admission email image, making the process more efficient and streamlined by reducing clicks and look ups required.
+
 Possible Future Extensions
 
 There are several potential future extensions for this project:
@@ -73,5 +76,6 @@ Web Interface: Developing a user-friendly web interface for applicants to submit
 and check their admission status.
 Real-Time Data: Integrating the system with a database to handle real-time data updates and provide
 instant admission results.
+Power Automate: Creating a power automate Flow could streamline processes further by reducing the need for human intervention on the email process, by accessing the outlook account associated with the admissions process, the flow can automatically generate emails to admitted students.
 Machine Learning Integration: Utilizing machine learning models to improve the admission process by
 predicting student success or department fit based on historical data.
