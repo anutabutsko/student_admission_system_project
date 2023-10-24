@@ -4,8 +4,33 @@ import pandas as pd
 from faker import Faker
 
 
-# Max heap implementation
-def max_heap(lst, value):
+# Max Heap Implementation
+def max_heap(lst, n, i):
+    largest = i
+    # Calculating positions of left and right children
+    left = i * 2 + 1
+    right = i * 2 + 2
+
+    # Comparing the largest value to the left child
+    if left < n and lst[largest] < lst[left]:
+        largest = left
+
+    # Comparing the largest value to the right child
+    if right < n and lst[largest] < lst[right]:
+        largest = right
+
+    # Checking if largest index has been changed
+    # No need to swap elements or call function recursively if largest element was not changed
+    if largest != i:
+        # Swapping the values of the parent with the largest element
+        lst[largest], lst[i] = lst[i], lst[largest]
+
+        # Call function recursively to check children values
+        max_heap(lst, n, largest)
+
+
+# Add a new value to the heap
+def add_heap(lst, value):
     lst.append(value)  # Add the new value to the end of the heap
     idx = len(lst) - 1  # Get the index of the newly added element
 
@@ -20,7 +45,7 @@ def max_heap(lst, value):
             break
 
 
-# Pop max heap implementation
+# Pop max element from heap
 def pop_max_heap(lst):
     # Checking if list is empty
     if not list:
@@ -42,45 +67,10 @@ def pop_max_heap(lst):
         n = len(lst)
 
         # Restore the tree by bringing down the element
-        while True:
-            left = index * 2 + 1
-            right = index * 2 + 2
-            largest = index
-
-            # Comparing the largest value to the left child
-            if left < n and lst[largest] < lst[left]:
-                largest = left
-
-            # Comparing the largest value to the right child
-            if right < n and lst[largest] < lst[right]:
-                largest = right
-
-            # Checking if largest index has been changed
-            # No need to swap elements or call function recursively if largest element was not changed
-            if largest != index:
-                # Swapping the values of the parent with the largest element
-                lst[largest], lst[index] = lst[index], lst[largest]
-                index = largest
-            else:
-                break
+        max_heap(lst, index, n)
 
     # Returning the maximum element that was removed
     return max_elem
-
-
-# Function that organizes student payload into a dictionary
-def student_data(name, student_type, computer_science, math, year, orientation_day, email, street, city, state, zip_code):
-    return {"name": name,
-            "student_type": student_type,
-            "computer_science": computer_science,
-            "math": math,
-            "year": year,
-            "orientation_day": orientation_day,
-            "email": email,
-            "Street Address": street,
-            "City": city,
-            "State": state,
-            "ZIP Code": zip_code}
 
 
 # Prioritizing each student
@@ -90,8 +80,7 @@ def priority(payload, idx):
         1 if payload["computer_science"] is True else 0,
         1 if payload["math"] is True else 0,
         payload["year"],  # Closer students are graduating - higher the priority
-        -payload["orientation_day"],
-        # Reversing the orientation day value to give priority to students that register earlier
+        -payload["orientation_day"],  # Reversing the orientation day value to give priority to students that register earlier
         idx  # Unique identifier of each student
     ]
 
@@ -106,7 +95,7 @@ def process_admissions(payload):
     # Enumerating through student requests and prioritizing them
     for idx, student in enumerate(payload):
         priority_student = priority(student, idx)
-        max_heap(lst, priority_student)  # Adding every priority to our max heap
+        add_heap(lst, priority_student)  # Adding every priority to our max heap
 
     # Admitting students up to a limit 25 based on max heap priorities
     while len(admitted_students) < 25 and len(lst) > 0:
@@ -145,6 +134,21 @@ def make_offers(payload, admitted_students, dropouts):
     return offers
 
 
+# Function that organizes student payload into a dictionary
+def student_data(name, student_type, computer_science, math, year, orientation_day, email, street, city, state, zip_code):
+    return {"name": name,
+            "student_type": student_type,
+            "computer_science": computer_science,
+            "math": math,
+            "year": year,
+            "orientation_day": orientation_day,
+            "email": email,
+            "Street Address": street,
+            "City": city,
+            "State": state,
+            "ZIP Code": zip_code}
+
+
 # Make a random fake data set of size n
 def random_student_admission(size=40):
     # Initialize Faker
@@ -168,6 +172,7 @@ def random_student_admission(size=40):
             student_data(name, student_type, computer_science, math, year, orientation, fake_email, fake_address, fake_city, fake_state, fake_zip))
 
     return student_list
+
 
 # Create Random Student List
 rand_stud = random_student_admission(27)
